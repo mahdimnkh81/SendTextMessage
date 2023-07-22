@@ -21,7 +21,7 @@ namespace ExchangeData.WCF
                 return db.SendMessages.Select(x => new SendTextModel
                 {
 
-
+                    Id = x.Id,
                     Name = x.Name,
                     PhoneNumber = x.PhoneNumber,
                     Email = x.Email,

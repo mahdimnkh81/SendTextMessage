@@ -21,7 +21,7 @@ namespace ExchangeData.BLL
 
             ExchangeDataClient.MessageTextService.ExchangeMessageServiceClient client = new ExchangeDataClient.MessageTextService.ExchangeMessageServiceClient();
             List<MessageModel> messageList = new List<MessageModel>();
-
+            var t = client.GetAll();
             foreach (ExchangeDataClient.MessageTextService.SendTextModel i in client.GetAll())
             {
                 var x = new MessageModel(i.Id, i.Name, i.PhoneNumber, i.Email, i.MessageHeading, i.Message);
