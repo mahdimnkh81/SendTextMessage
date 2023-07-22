@@ -1,0 +1,15 @@
+D:\WCF\ExchangeData\ExchangeData.WCF\bin\ExchangeData.WCF.dll.config
+D:\WCF\ExchangeData\ExchangeData.WCF\bin\ExchangeData.WCF.dll
+D:\WCF\ExchangeData\ExchangeData.WCF\bin\ExchangeData.WCF.pdb
+D:\WCF\ExchangeData\ExchangeData.WCF\bin\EntityFramework.dll
+D:\WCF\ExchangeData\ExchangeData.WCF\bin\EntityFramework.SqlServer.dll
+D:\WCF\ExchangeData\ExchangeData.WCF\bin\ExchangeData.DAL.dll
+D:\WCF\ExchangeData\ExchangeData.WCF\bin\ExchangeData.DAL.pdb
+D:\WCF\ExchangeData\ExchangeData.WCF\bin\ExchangeData.DAL.dll.config
+D:\WCF\ExchangeData\ExchangeData.WCF\bin\EntityFramework.xml
+D:\WCF\ExchangeData\ExchangeData.WCF\bin\EntityFramework.SqlServer.xml
+D:\WCF\ExchangeData\ExchangeData.WCF\obj\Debug\ExchangeData.WCF.csprojAssemblyReference.cache
+D:\WCF\ExchangeData\ExchangeData.WCF\obj\Debug\ExchangeData.WCF.csproj.CoreCompileInputs.cache
+D:\WCF\ExchangeData\ExchangeData.WCF\obj\Debug\ExchangeData.WCF.csproj.CopyComplete
+D:\WCF\ExchangeData\ExchangeData.WCF\obj\Debug\ExchangeData.WCF.dll
+D:\WCF\ExchangeData\ExchangeData.WCF\obj\Debug\ExchangeData.WCF.pdb

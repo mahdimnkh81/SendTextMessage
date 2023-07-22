@@ -1,0 +1,6 @@
+D:\WCF\ExchangeDataClient\obj\Debug\ExchangeDataClient.BLL.csproj.CoreCompileInputs.cache
+D:\WCF\ExchangeDataClient\obj\Debug\ExchangeDataClient.dll
+D:\WCF\ExchangeDataClient\obj\Debug\ExchangeDataClient.pdb
+D:\WCF\ExchangeDataClient\bin\Debug\ExchangeDataClient.dll.config
+D:\WCF\ExchangeDataClient\bin\Debug\ExchangeDataClient.dll
+D:\WCF\ExchangeDataClient\bin\Debug\ExchangeDataClient.pdb

@@ -1,0 +1,12 @@
+D:\WCF\ExchangeData\ExchangeData.DAL\bin\Debug\ExchangeData.DAL.dll.config
+D:\WCF\ExchangeData\ExchangeData.DAL\bin\Debug\ExchangeData.DAL.dll
+D:\WCF\ExchangeData\ExchangeData.DAL\bin\Debug\ExchangeData.DAL.pdb
+D:\WCF\ExchangeData\ExchangeData.DAL\bin\Debug\EntityFramework.dll
+D:\WCF\ExchangeData\ExchangeData.DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\WCF\ExchangeData\ExchangeData.DAL\bin\Debug\EntityFramework.xml
+D:\WCF\ExchangeData\ExchangeData.DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\WCF\ExchangeData\ExchangeData.DAL\obj\Debug\ExchangeData.DAL.csproj.CoreCompileInputs.cache
+D:\WCF\ExchangeData\ExchangeData.DAL\obj\Debug\ExchangeData.DAL.csproj.CopyComplete
+D:\WCF\ExchangeData\ExchangeData.DAL\obj\Debug\ExchangeData.DAL.dll
+D:\WCF\ExchangeData\ExchangeData.DAL\obj\Debug\ExchangeData.DAL.pdb
+D:\WCF\ExchangeData\ExchangeData.DAL\obj\Debug\ExchangeData.DAL.csprojAssemblyReference.cache
