@@ -1,4 +1,6 @@
 ﻿using ExchangeData.BLL;
+using Kendo.Mvc.Extensions;
+using Kendo.Mvc.UI;
 using System.Web.Mvc;
 
 namespace ExchangeDataClient.MVC.Controllers
@@ -9,14 +11,18 @@ namespace ExchangeDataClient.MVC.Controllers
         {
             return View();
         }
-
         public ActionResult About()
         {
+            return View();
+        }
+
+        public ActionResult GetData([DataSourceRequest] DataSourceRequest request)
+        {
             ViewBag.Message = "Your application description page.";
-            var x = MassageTextService.GetBy(1);
+            var listOfMessage = MassageTextService.GetAll();
 
-
-            return View(x);
+            return Json(listOfMessage.ToDataSourceResult(request), JsonRequestBehavior.AllowGet);
+            //return View(listOfMessage);
         }
 
         public ActionResult Contact()

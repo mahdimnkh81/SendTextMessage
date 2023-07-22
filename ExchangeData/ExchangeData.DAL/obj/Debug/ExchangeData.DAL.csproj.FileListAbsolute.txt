@@ -10,3 +10,15 @@ D:\WCF\ExchangeData\ExchangeData.DAL\obj\Debug\ExchangeData.DAL.csproj.CopyCompl
 D:\WCF\ExchangeData\ExchangeData.DAL\obj\Debug\ExchangeData.DAL.dll
 D:\WCF\ExchangeData\ExchangeData.DAL\obj\Debug\ExchangeData.DAL.pdb
 D:\WCF\ExchangeData\ExchangeData.DAL\obj\Debug\ExchangeData.DAL.csprojAssemblyReference.cache
+D:\FirstProject\SendTextMessage\ExchangeData\ExchangeData.DAL\bin\Debug\ExchangeData.DAL.dll.config
+D:\FirstProject\SendTextMessage\ExchangeData\ExchangeData.DAL\bin\Debug\ExchangeData.DAL.dll
+D:\FirstProject\SendTextMessage\ExchangeData\ExchangeData.DAL\bin\Debug\ExchangeData.DAL.pdb
+D:\FirstProject\SendTextMessage\ExchangeData\ExchangeData.DAL\bin\Debug\EntityFramework.dll
+D:\FirstProject\SendTextMessage\ExchangeData\ExchangeData.DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\FirstProject\SendTextMessage\ExchangeData\ExchangeData.DAL\bin\Debug\EntityFramework.xml
+D:\FirstProject\SendTextMessage\ExchangeData\ExchangeData.DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\FirstProject\SendTextMessage\ExchangeData\ExchangeData.DAL\obj\Debug\ExchangeData.DAL.csprojAssemblyReference.cache
+D:\FirstProject\SendTextMessage\ExchangeData\ExchangeData.DAL\obj\Debug\ExchangeData.DAL.csproj.CoreCompileInputs.cache
+D:\FirstProject\SendTextMessage\ExchangeData\ExchangeData.DAL\obj\Debug\ExchangeData.DAL.csproj.CopyComplete
+D:\FirstProject\SendTextMessage\ExchangeData\ExchangeData.DAL\obj\Debug\ExchangeData.DAL.dll
+D:\FirstProject\SendTextMessage\ExchangeData\ExchangeData.DAL\obj\Debug\ExchangeData.DAL.pdb
