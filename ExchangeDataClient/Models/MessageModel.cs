@@ -25,5 +25,9 @@ namespace ExchangeData.BLL.Models
             Date = DateTime.Now.ToString();
 
         }
+
+        public MessageModel()
+        {
+        }
     }
 }

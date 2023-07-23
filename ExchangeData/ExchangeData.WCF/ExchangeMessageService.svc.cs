@@ -38,7 +38,7 @@ namespace ExchangeData.WCF
         {
             using (var db = new ExchangeDataDb())
             {
-                return db.SendMessages.Select(x => new SendTextModel
+                return db.SendMessages.Where(x=>x.Id == id).Select(x => new SendTextModel
                 {
 
                     Id = id,
@@ -48,7 +48,8 @@ namespace ExchangeData.WCF
                     MessageHeading = x.MessageHeading,
                     Message = x.Message,
                     Date = x.Date
-                }).FirstOrDefault(x => x.Id == id);
+                }).FirstOrDefault(x=>x.Id== id);
+                
             }
         }
 

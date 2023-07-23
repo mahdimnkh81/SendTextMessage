@@ -9,9 +9,7 @@ namespace ExchangeData.BLL
         public static MessageModel GetBy(int id)
         {
             ExchangeDataClient.MessageTextService.ExchangeMessageServiceClient client = new ExchangeDataClient.MessageTextService.ExchangeMessageServiceClient();
-           
-
-            var x = new MessageModel(client.GetBy(id).Id, client.GetBy(id).Name, client.GetBy(id).PhoneNumber, client.GetBy(id).Email, client.GetBy(id).MessageHeading, client.GetBy(id).Message);
+            var x = client.GetBy(id).Name;
 
             return new MessageModel(client.GetBy(id).Id, client.GetBy(id).Name, client.GetBy(id).PhoneNumber, client.GetBy(id).Email, client.GetBy(id).MessageHeading, client.GetBy(id).Message);
         }

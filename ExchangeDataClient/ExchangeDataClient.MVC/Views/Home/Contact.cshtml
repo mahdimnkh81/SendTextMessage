@@ -1,17 +1,84 @@
-﻿@{
-    ViewBag.Title = "Contact";
+﻿@using ExchangeData.BLL.Models
+@using Kendo.Mvc.UI
+@using Kendo.Mvc.UI.Html
+@model MessageModel
+
+@{
+    long a = 4;
+}
+
+@{
+    ViewBag.Title = "Contact2";
 }
 <h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+
+@*<h1>@Model.Id</h1>
+    <h1>@Model.Message</h1>*@
+
+<h1>@ViewBag.id</h1>
+
+
+
+
+
+
+<div>
+
+
+
+    <form action=@Url.Action("Contact","Home") method="post">
+        <label for="id">شناسه:</label>
+        <input type="number" id="id" name="id" placeholder="شناسه خود را وارد کنید"><br><br>
+        <input type="submit" value="Submit">
+    </form>
+    <a href="@Url.Action("index","Home")">click</a>
+
+
+
+    @*@using (Html.BeginForm("Contact", "Home"))
+    {
+
+    <legend> شناسه مورد نظر را وارد کنید</legend>
+
+    @Html.LabelFor(parent => parent.Id)
+    @Html.EditorFor(parent => parent.Id)*@
+
+
+
+    @(Html.Kendo().Grid<MessageModel>()
+        .Name("Grid").Columns(columns =>
+        {
+        columns.Bound(p => p.Id).Width(140);
+        columns.Bound(p => p.Name).Width(140);
+        columns.Bound(p => p.PhoneNumber).Width(140);
+        columns.Bound(p => p.Email).Width(140);
+        columns.Bound(p => p.MessageHeading).Width(140);
+        columns.Bound(p => p.Message).Width(140);
+        }).Scrollable().Filterable().DataSource(dataSource => dataSource.Ajax().Read(read => read.Action("GetData", "Home", new { caseFileId = ViewBag.id })))
+    )
+    @*<input type="submit" value="Save" />
+    }*@
+
+</div>
+
+
+<script>
+    function passidData() {
+        var dropdown = $("#ddl").getKendoDropDownList();
+        //var ddlValue = dropdown.value();
+
+        //var grid = $("#grid").data("kendoGrid");
+        //var selection = grid.getSelectedData();
+            int ids;
+
+
+        return { dropdown: 7 }
+    }
+</script>
+
+
+
+
+

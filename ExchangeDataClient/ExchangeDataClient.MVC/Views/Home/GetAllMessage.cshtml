@@ -1,0 +1,54 @@
+﻿@using ExchangeData.BLL.Models
+@model List<MessageModel>
+@using Kendo.Mvc.UI
+
+@{
+    ViewBag.Title = "LIST OF MESSAGE";
+}
+
+
+
+<h2>@ViewBag.Title</h2>
+<br>
+<br>
+
+
+@{ 
+    long a = 5;
+}
+
+
+<div class="code-cut">
+
+
+    @(Html.Kendo().Grid<MessageModel>
+    ().Name("Grid")
+.Columns(columns =>
+{
+    columns.Select().Width(75).HtmlAttributes(new { @class = "checkbox-align" }).HeaderHtmlAttributes(new { @class = "checkbox-align" });
+
+    columns.Bound(p => p.Id).Width(140).Sortable(false).Title("شناسه");
+    columns.Bound(p => p.Name).Width(140).Title("نام");
+    columns.Bound(p => p.PhoneNumber).Width(140).Title("موبایل");
+    columns.Bound(p => p.Email).Width(140).Title("ایمیل");
+    columns.Bound(p => p.MessageHeading).Width(140).Title("عنوان پیام");
+    columns.Bound(p => p.Message).Width(140).Title("پیام");
+})
+.Resizable(r => r.Columns(true))
+.Reorderable(r => r.Columns(true))
+.Filterable()
+.Scrollable()
+.Sortable()
+.Pageable()
+.Groupable(g => g.ShowFooter(false))
+.DataSource(dataSource => dataSource.Ajax().Read(read => read.Action("GetALLData", "Home", new { caseFileId = a })))
+    )
+</div>
+
+
+
+
+
+
+
+
