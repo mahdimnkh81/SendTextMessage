@@ -27,17 +27,17 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="SaveMessage">
+  <xs:element name="CreateMessage">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/ExchangeData.DAL.ExchangeDataModel" minOccurs="0" name="message" nillable="true" type="q3:SendTextModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="SaveMessageResponse">
+  <xs:element name="CreateMessageResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="SaveMessageResult" type="xs:boolean" />
+        <xs:element minOccurs="0" name="CreateMessageResult" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

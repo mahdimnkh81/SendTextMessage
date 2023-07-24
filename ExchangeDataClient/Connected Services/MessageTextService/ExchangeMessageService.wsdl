@@ -19,11 +19,11 @@
   <wsdl:message name="IExchangeMessageService_GetAll_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAllResponse" />
   </wsdl:message>
-  <wsdl:message name="IExchangeMessageService_SaveMessage_InputMessage">
-    <wsdl:part name="parameters" element="tns:SaveMessage" />
+  <wsdl:message name="IExchangeMessageService_CreateMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateMessage" />
   </wsdl:message>
-  <wsdl:message name="IExchangeMessageService_SaveMessage_OutputMessage">
-    <wsdl:part name="parameters" element="tns:SaveMessageResponse" />
+  <wsdl:message name="IExchangeMessageService_CreateMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateMessageResponse" />
   </wsdl:message>
   <wsdl:portType name="IExchangeMessageService">
     <wsdl:operation name="GetBy">
@@ -34,9 +34,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IExchangeMessageService/GetAll" message="tns:IExchangeMessageService_GetAll_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IExchangeMessageService/GetAllResponse" message="tns:IExchangeMessageService_GetAll_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="SaveMessage">
-      <wsdl:input wsaw:Action="http://tempuri.org/IExchangeMessageService/SaveMessage" message="tns:IExchangeMessageService_SaveMessage_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IExchangeMessageService/SaveMessageResponse" message="tns:IExchangeMessageService_SaveMessage_OutputMessage" />
+    <wsdl:operation name="CreateMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExchangeMessageService/CreateMessage" message="tns:IExchangeMessageService_CreateMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IExchangeMessageService/CreateMessageResponse" message="tns:IExchangeMessageService_CreateMessage_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IExchangeMessageService" type="tns:IExchangeMessageService">
@@ -59,8 +59,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="SaveMessage">
-      <soap:operation soapAction="http://tempuri.org/IExchangeMessageService/SaveMessage" style="document" />
+    <wsdl:operation name="CreateMessage">
+      <soap:operation soapAction="http://tempuri.org/IExchangeMessageService/CreateMessage" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

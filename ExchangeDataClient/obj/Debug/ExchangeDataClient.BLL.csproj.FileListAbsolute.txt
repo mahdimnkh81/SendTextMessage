@@ -7,7 +7,6 @@ D:\WCF\ExchangeDataClient\bin\Debug\ExchangeDataClient.pdb
 D:\FirstProject\SendTextMessage\ExchangeDataClient\bin\Debug\ExchangeDataClient.dll.config
 D:\FirstProject\SendTextMessage\ExchangeDataClient\bin\Debug\ExchangeDataClient.dll
 D:\FirstProject\SendTextMessage\ExchangeDataClient\bin\Debug\ExchangeDataClient.pdb
-D:\FirstProject\SendTextMessage\ExchangeDataClient\obj\Debug\ExchangeDataClient.BLL.csprojAssemblyReference.cache
 D:\FirstProject\SendTextMessage\ExchangeDataClient\obj\Debug\ExchangeDataClient.BLL.csproj.CoreCompileInputs.cache
 D:\FirstProject\SendTextMessage\ExchangeDataClient\obj\Debug\ExchangeDataClient.dll
 D:\FirstProject\SendTextMessage\ExchangeDataClient\obj\Debug\ExchangeDataClient.pdb

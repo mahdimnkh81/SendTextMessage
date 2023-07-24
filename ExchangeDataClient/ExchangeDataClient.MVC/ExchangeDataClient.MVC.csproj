@@ -760,7 +760,7 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\GetAllMessage.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\GetMessage.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\kendo\cultures\kendo.culture.fa-IR.min.js.map" />
     <Content Include="Scripts\kendo\cultures\kendo.culture.fa.min.js.map" />
@@ -888,6 +888,7 @@
     <Content Include="Scripts\kendo\kendo.web.min.js.map" />
     <Content Include="Scripts\kendo\kendo.window.min.js.map" />
     <Content Include="Scripts\kendo\messages\kendo.messages.fa-IR.min.js.map" />
+    <Content Include="Views\Home\CreateMessage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

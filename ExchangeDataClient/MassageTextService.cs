@@ -1,5 +1,6 @@
 ﻿using ExchangeData.BLL.Models;
 using System.Collections.Generic;
+using System;
 
 
 namespace ExchangeData.BLL
@@ -27,6 +28,23 @@ namespace ExchangeData.BLL
             }
 
             return messageList;
+        }
+
+        public static bool AddMessage(MessageModel messageModel)
+        {
+            ExchangeDataClient.MessageTextService.ExchangeMessageServiceClient client = new ExchangeDataClient.MessageTextService.ExchangeMessageServiceClient();
+
+            var messgedB = new ExchangeDataClient.MessageTextService.SendTextModel()
+            {
+                Name = messageModel.Name,
+                PhoneNumber = messageModel.PhoneNumber,
+                Email = messageModel.Email,
+                MessageHeading = messageModel.MessageHeading,
+                Message = messageModel.Message,
+                Date = DateTime.Now.ToString()
+            };
+            client.CreateMessage(messgedB);
+            return true;
         }
     }
 }

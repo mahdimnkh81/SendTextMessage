@@ -27,7 +27,7 @@ namespace ExchangeDataClient.MVC.Controllers
             //return View(listOfMessage);
         }
         [HttpPost]
-        public ActionResult Contact(FormCollection form)
+        public ActionResult GetMessage(FormCollection form)
         {
         
             ViewBag.id = form["id"];
@@ -35,7 +35,7 @@ namespace ExchangeDataClient.MVC.Controllers
             return View(new MessageModel());
         }
         [HttpGet]
-        public ActionResult Contact()
+        public ActionResult GetMessage()
         {
 
             return View();
@@ -50,6 +50,21 @@ namespace ExchangeDataClient.MVC.Controllers
 
             return Json(message.ToDataSourceResult(request), JsonRequestBehavior.AllowGet);
             
+        }
+
+      
+        public ActionResult CreateMessage()
+        {
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CreateMessage(MessageModel m)
+        {
+            MassageTextService.AddMessage(m);
+            ModelState.Clear();
+            return View(new MessageModel());
         }
 
     }

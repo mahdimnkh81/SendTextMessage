@@ -22,5 +22,6 @@ namespace ExchangeData.DAL.ExchangeDataModel
         public string Message { get; set; }
         [DataMember]
         public string Date { get; set; }
+
     }
 }

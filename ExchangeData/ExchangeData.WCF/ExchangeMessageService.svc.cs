@@ -53,9 +53,28 @@ namespace ExchangeData.WCF
             }
         }
 
-        public bool SaveMessage(SendTextModel message)
+        public bool CreateMessage(SendTextModel message)
         {
-            throw new NotImplementedException();
+            using (var db = new ExchangeDataDb())
+            {
+
+                    var m = new SendMessage() {
+                        Name = message.Name,
+                        PhoneNumber = message.PhoneNumber,
+                        Email = message.Email,
+                        MessageHeading = message.MessageHeading,
+                        Message = message.Message,
+                        Date = message.Date
+                        
+                    };
+                    db.SendMessages.Add(m);
+                    db.SaveChanges();
+
+                    return true;
+                
+
+
+            }
         }
     }
 }

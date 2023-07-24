@@ -170,11 +170,11 @@ namespace ExchangeDataClient.MessageTextService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IExchangeMessageService/GetAll", ReplyAction="http://tempuri.org/IExchangeMessageService/GetAllResponse")]
         System.Threading.Tasks.Task<ExchangeDataClient.MessageTextService.SendTextModel[]> GetAllAsync();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IExchangeMessageService/SaveMessage", ReplyAction="http://tempuri.org/IExchangeMessageService/SaveMessageResponse")]
-        bool SaveMessage(ExchangeDataClient.MessageTextService.SendTextModel message);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IExchangeMessageService/CreateMessage", ReplyAction="http://tempuri.org/IExchangeMessageService/CreateMessageResponse")]
+        bool CreateMessage(ExchangeDataClient.MessageTextService.SendTextModel message);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IExchangeMessageService/SaveMessage", ReplyAction="http://tempuri.org/IExchangeMessageService/SaveMessageResponse")]
-        System.Threading.Tasks.Task<bool> SaveMessageAsync(ExchangeDataClient.MessageTextService.SendTextModel message);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IExchangeMessageService/CreateMessage", ReplyAction="http://tempuri.org/IExchangeMessageService/CreateMessageResponse")]
+        System.Threading.Tasks.Task<bool> CreateMessageAsync(ExchangeDataClient.MessageTextService.SendTextModel message);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -220,12 +220,12 @@ namespace ExchangeDataClient.MessageTextService {
             return base.Channel.GetAllAsync();
         }
         
-        public bool SaveMessage(ExchangeDataClient.MessageTextService.SendTextModel message) {
-            return base.Channel.SaveMessage(message);
+        public bool CreateMessage(ExchangeDataClient.MessageTextService.SendTextModel message) {
+            return base.Channel.CreateMessage(message);
         }
         
-        public System.Threading.Tasks.Task<bool> SaveMessageAsync(ExchangeDataClient.MessageTextService.SendTextModel message) {
-            return base.Channel.SaveMessageAsync(message);
+        public System.Threading.Tasks.Task<bool> CreateMessageAsync(ExchangeDataClient.MessageTextService.SendTextModel message) {
+            return base.Channel.CreateMessageAsync(message);
         }
     }
 }

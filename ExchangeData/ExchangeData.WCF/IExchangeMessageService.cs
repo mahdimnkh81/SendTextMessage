@@ -18,6 +18,6 @@ namespace ExchangeData.WCF
         List<SendTextModel> GetAll();
 
         [OperationContract]
-        bool SaveMessage(SendTextModel message);
+        bool CreateMessage(SendTextModel message);
     }
 }

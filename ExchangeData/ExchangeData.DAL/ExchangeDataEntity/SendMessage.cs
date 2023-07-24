@@ -7,13 +7,14 @@ namespace ExchangeData.DAL.ExchangeDataEntity
     using System.Data.Entity.Spatial;
 
     [Table("SendMessage")]
+
     public partial class SendMessage
     {
         [Key]
         [Column(Order = 0)]
         public long Id { get; set; }
 
-        [Key]
+        
         [Column(Order = 1)]
         [StringLength(50)]
         public string Name { get; set; }
@@ -27,11 +28,10 @@ namespace ExchangeData.DAL.ExchangeDataEntity
         [StringLength(75)]
         public string MessageHeading { get; set; }
 
-        [Key]
         [Column(Order = 2)]
         public string Message { get; set; }
 
-        [Key]
+        
         [Column(Order = 3)]
         [StringLength(50)]
         public string Date { get; set; }
