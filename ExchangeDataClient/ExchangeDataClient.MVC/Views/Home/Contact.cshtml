@@ -8,75 +8,69 @@
 }
 
 @{
-    ViewBag.Title = "Contact2";
+    ViewBag.Title = "جستجوی پیام ";
 }
-<h2>@ViewBag.Title.</h2>
+<style>
 
+    .searchText p {
+        text-align: right;
+        padding-left: 20px;
+    }
 
-
-@*<h1>@Model.Id</h1>
-    <h1>@Model.Message</h1>*@
-
-<h1>@ViewBag.id</h1>
-
-
-
-
-
+    .searchText {
+        padding-top: 20px;
+        padding-bottom: 50px;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+        align-items: center;
+        align-content: center;
+    }
+</style>
+<h2><center>@ViewBag.Title</center></h2>
 
 <div>
+    @*<form action=@Url.Action("Contact","Home") method="post">
+            <label for="id">شناسه:</label>
+            <input type="number" id="id" name="id" placeholder="شناسه خود را وارد کنید"><br><br>
+            <input type="submit" value="Submit">
+        </form>*@
 
-
-
-    <form action=@Url.Action("Contact","Home") method="post">
-        <label for="id">شناسه:</label>
-        <input type="number" id="id" name="id" placeholder="شناسه خود را وارد کنید"><br><br>
-        <input type="submit" value="Submit">
-    </form>
-    <a href="@Url.Action("index","Home")">click</a>
-
-
-
-    @*@using (Html.BeginForm("Contact", "Home"))
+    @using (Html.BeginForm("Contact", "Home"))
     {
+        <div class="searchText">
+            @*<legend> شناسه مورد نظر را وارد کنید</legend>*@
+            <p style="font-family:verdana"><b>: شناسه مورد نظر را وارد کنید</b></p>
 
-    <legend> شناسه مورد نظر را وارد کنید</legend>
+            @*@Html.LabelFor(parent => parent.Id, "شناسه")*@
+            @Html.EditorFor(parent => parent.Id)
+        </div>
 
-    @Html.LabelFor(parent => parent.Id)
-    @Html.EditorFor(parent => parent.Id)*@
+        @(Html.Kendo().Grid<MessageModel>()
+            .Name("Grid").Columns(columns =>
+            {
+                 columns.Bound(p => p.Id).Width(140).Sortable(false).Title("شناسه");
+                 columns.Bound(p => p.Name).Width(140).Title("نام");
+                 columns.Bound(p => p.PhoneNumber).Width(140).Title("موبایل");
+                 columns.Bound(p => p.Email).Width(140).Title("ایمیل");
+                 columns.Bound(p => p.MessageHeading).Width(140).Title("عنوان پیام");
+                 columns.Bound(p => p.Message).Width(140).Title("پیام");
+            }).Sortable(sortable => sortable
+                            .AllowUnsort(true)
+                            .SortMode(GridSortMode.MultipleColumn)
+                            .ShowIndexes(true))
+                            .ColumnMenu()
+                            .Scrollable()
+                            .Filterable()
+                            .Resizable(e => e.Columns(true))
+                            .DataSource(dataSource => dataSource.Ajax().Read(read => read.Action("GetData", "Home", new { caseFileId = ViewBag.id })))
+        )
+        <input type="submit" value="جستجو" />
 
-
-
-    @(Html.Kendo().Grid<MessageModel>()
-        .Name("Grid").Columns(columns =>
-        {
-        columns.Bound(p => p.Id).Width(140);
-        columns.Bound(p => p.Name).Width(140);
-        columns.Bound(p => p.PhoneNumber).Width(140);
-        columns.Bound(p => p.Email).Width(140);
-        columns.Bound(p => p.MessageHeading).Width(140);
-        columns.Bound(p => p.Message).Width(140);
-        }).Scrollable().Filterable().DataSource(dataSource => dataSource.Ajax().Read(read => read.Action("GetData", "Home", new { caseFileId = ViewBag.id })))
-    )
-    @*<input type="submit" value="Save" />
-    }*@
+    }
 
 </div>
 
-
-<script>
-    function passidData() {
-        var dropdown = $("#ddl").getKendoDropDownList();
-        //var ddlValue = dropdown.value();
-
-        //var grid = $("#grid").data("kendoGrid");
-        //var selection = grid.getSelectedData();
-            int ids;
-
-
-        return { dropdown: 7 }
-    }
-</script>
 
 
 

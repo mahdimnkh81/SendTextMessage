@@ -23,8 +23,12 @@
 
     @(Html.Kendo().Grid<MessageModel>
     ().Name("Grid")
-.Columns(columns =>
-{
+    .ToolBar(toolbar => {  toolbar.Excel().Text("دریافت فایل اکسل").HtmlAttributes(new { @class = "toolbar-field"  } );  }
+
+    )
+    .Excel(excel => excel.FileName("SearchReport.xlsx"))
+    .Columns(columns =>
+    {
     columns.Select().Width(75).HtmlAttributes(new { @class = "checkbox-align" }).HeaderHtmlAttributes(new { @class = "checkbox-align" });
 
     columns.Bound(p => p.Id).Width(140).Sortable(false).Title("شناسه");
@@ -33,15 +37,24 @@
     columns.Bound(p => p.Email).Width(140).Title("ایمیل");
     columns.Bound(p => p.MessageHeading).Width(140).Title("عنوان پیام");
     columns.Bound(p => p.Message).Width(140).Title("پیام");
-})
-.Resizable(r => r.Columns(true))
-.Reorderable(r => r.Columns(true))
-.Filterable()
-.Scrollable()
-.Sortable()
-.Pageable()
-.Groupable(g => g.ShowFooter(false))
-.DataSource(dataSource => dataSource.Ajax().Read(read => read.Action("GetALLData", "Home", new { caseFileId = a })))
+    })
+    .Resizable(r => r.Columns(true))
+    .Reorderable(r => r.Columns(true))
+    .Sortable(sortable => sortable
+    .AllowUnsort(true)
+    .SortMode(GridSortMode.MultipleColumn)
+    .ShowIndexes(true))
+    .Filterable()
+    .Scrollable()
+    .Sortable()
+    .Pageable(pageable => pageable
+    .Refresh(true)
+    .Messages(msg => msg.ItemsPerPage(" ")))
+    .ColumnMenu()
+    .Resizable(e => e.Columns(true))
+    .HtmlAttributes(new { style = " overflow-x: scroll;" })
+    .Groupable(g => g.ShowFooter(false))
+    .DataSource(dataSource => dataSource.Ajax().Read(read => read.Action("GetALLData", "Home", new { caseFileId = a })).PageSize(4))
     )
 </div>
 
