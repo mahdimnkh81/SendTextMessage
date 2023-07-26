@@ -3,27 +3,27 @@
 @using Kendo.Mvc.UI
 
 @{
-    ViewBag.Title = "LIST OF MESSAGE";
+    ViewBag.Title = "کل پیام ها";
 }
 
 
 
-<h2>@ViewBag.Title</h2>
+<p class="message">کل پیام ها</p>
 <br>
 <br>
 
 
-@{ 
+@{
     long a = 5;
 }
 
 
-<div class="code-cut">
+<div class="grid k-rtl">
 
 
     @(Html.Kendo().Grid<MessageModel>
     ().Name("Grid")
-    .ToolBar(toolbar => {  toolbar.Excel().Text("دریافت فایل اکسل").HtmlAttributes(new { @class = "toolbar-field"  } );  }
+    .ToolBar(toolbar => { toolbar.Excel().Text("دریافت فایل اکسل").HtmlAttributes(new { @class = "toolbar-field" }); }
 
     )
     .Excel(excel => excel.FileName("SearchReport.xlsx"))
@@ -57,6 +57,38 @@
     .DataSource(dataSource => dataSource.Ajax().Read(read => read.Action("GetALLData", "Home", new { caseFileId = a })).PageSize(4))
     )
 </div>
+
+<style>
+    .grid {
+        padding-right: 150px;
+    }
+
+    .message {
+        direction: rtl;
+        padding-right: 1050px;
+        font-size: 50px;
+        color: darkred;
+    }
+
+    grid, .k-menu, .k-scheduler {
+        border-radius: 4px;
+        /*width: 1000px;*/
+    }
+    .k-rtl {
+    direction: rtl;
+    position: absolute;
+    margin: 0;
+    padding-top: inherit;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: stretch;
+    margin-right: 500px;
+    margin-left: 400px;
+    justify-content: center;
+
+}
+</style>
 
 
 

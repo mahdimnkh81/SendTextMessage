@@ -6,90 +6,110 @@
 
 
 @{
-    ViewBag.Title = "CreateMessage";
+    ViewBag.Title = "افزودن پیام";
 }
 
-<h2>CreateMessage</h2>
+<h2 class="message">افزودن پیام</h2>
 
-<style>
-    .k-textbox.form-control {
-        padding-left: 100px;
-        background-color: burlywood;
-        text-align: center;
+<div class="formstyle">
+    @using (Html.BeginForm("CreateMessage", "Home", FormMethod.Post))
+    {
+        <div class="form">
+            <div class="row">
+                @Html.LabelFor(parent => parent.Name, "نام")
+                @Html.Kendo().TextBoxFor(x => x.Name).Name("Name").HtmlAttributes(new { @class = "form-control" })
+
+            </div>
+
+            <div class="row">
+                @Html.LabelFor(parent => parent.PhoneNumber, "موبایل")
+                @Html.Kendo().TextBoxFor(x => x.PhoneNumber).Name("PhoneNumber").HtmlAttributes(new { @class = "form-control" })
+            </div>
+
+            <div class="row">
+                @Html.LabelFor(parent => parent.Email, "ایمیل")
+                @Html.Kendo().TextBoxFor(x => x.Email).Name("Email").HtmlAttributes(new { @class = "form-control" })
+            </div>
+
+            <div class="row">
+                @Html.LabelFor(parent => parent.MessageHeading, "عنوان پیام")
+                @Html.Kendo().TextBoxFor(x => x.MessageHeading).Name("MessageHeading").HtmlAttributes(new { @class = "form-control" })
+            </div>
+            <div class="row">
+                @Html.LabelFor(parent => parent.Message, "پیام")
+                @Html.Kendo().TextBoxFor(x => x.Message).Name("Message").HtmlAttributes(new { @class = "form-control" })
+
+            </div>
+            <div class="buttonSave">
+                <button type="submit" class="k-button k-insert">
+                    ثبت
+                </button>
+            </div>
+        </div>
+
+
     }
 
-    .k-textbox.form-control2 {
-        padding-left: 100px;
-        padding-top: 200px;
-        background-color: aquamarine;
-        text-align: center;
-    }
-    .row {
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-    justify-content: center;
-    padding-bottom:20px;
-}
-    .form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-    .row label {
-    width: 50px;
-    margin-left: 20px;
-}
-    .k-textbox.form-control {
- 
-    width: 500px;
-}
-    .buttonSave {
-    display: flex;
-    width: 350px;
-    justify-content: flex-start;
-}
-    .k-button {
-        width: 100px;
-        background-color : slategray;
-    }
-</style>
+    <style>
+        .message {
+            direction: rtl;
+            padding-right :1100px;
+            margin-bottom:50px;
+            font-size:xx-large;
+        }
 
-@using (Html.BeginForm("CreateMessage", "Home", FormMethod.Post))
-{
-<div class="form">
-    <div class="row">
-        @Html.LabelFor(parent => parent.Name, "نام")
-        @Html.Kendo().TextBoxFor(x => x.Name).Name("Name").HtmlAttributes(new { @class = "form-control" })
+        .formstyle {
+            padding-right: 150px;
+        }
 
-    </div>
+        .k-textbox.form-control {
+            padding-left: 100px;
+            /*background-color: burlywood;*/
+            text-align: center;
+        }
 
-    <div class="row">
-        @Html.LabelFor(parent => parent.PhoneNumber, "موبایل")
-        @Html.Kendo().TextBoxFor(x => x.PhoneNumber).Name("PhoneNumber").HtmlAttributes(new { @class = "form-control" })
-    </div>
+        .k-textbox.form-control2 {
+            padding-left: 100px;
+            padding-top: 200px;
+            /*background-color: aquamarine;*/
+            text-align: center;
+        }
 
-    <div class="row">
-        @Html.LabelFor(parent => parent.Email, "ایمیل")
-        @Html.Kendo().TextBoxFor(x => x.Email).Name("Email").HtmlAttributes(new { @class = "form-control" })
-    </div>
+        .row {
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            justify-content: center;
+            padding-bottom: 20px;
+        }
 
-    <div class="row">
-        @Html.LabelFor(parent => parent.MessageHeading, "عنوان پیام")
-        @Html.Kendo().TextBoxFor(x => x.MessageHeading).Name("MessageHeading").HtmlAttributes(new { @class = "form-control" })
-    </div>
-    <div class="row">
-        @Html.LabelFor(parent => parent.Message, "پیام")
-        @Html.Kendo().TextBoxFor(x => x.Message).Name("Message").HtmlAttributes(new { @class = "form-control" })
+        .form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding-top: 45px;
+        }
 
-    </div>
-    <div class="buttonSave">
-        <button type="submit"  class="k-button k-insert" >
-            ثبت
-        </button>
-    </div>
-</div>
+        .row label {
+            width: 50px;
+            margin-left: 20px;
+           
+        }
 
+        .k-textbox.form-control {
+            width: 500px;
+             text-align:right;
+        }
 
-}
+        .buttonSave {
+            display: flex;
+            width: 350px;
+            justify-content: flex-start;
+        }
+
+        .k-button {
+            width: 100px;
+            background-color: slategray;
+        }
+    </style>

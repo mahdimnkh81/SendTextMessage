@@ -1,47 +1,107 @@
-﻿<!DOCTYPE html>
+﻿@using Kendo.Mvc.UI
+@using Kendo.Mvc.UI.Html
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
- 
+
     @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/bootstrap-rtl")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
     @Styles.Render("~/Content/kendo/css")
     @Scripts.Render("~/bundles/kendo")
     @Scripts.Render("~/bundles/bootstrap")
 </head>
+
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("ALLMessage", "GetAllMessage", "Home")</li>
-                    <li>@Html.ActionLink("FindMessage", "GetMessage", "Home")</li>
-                    <li>@Html.ActionLink("AddMessage", "CreateMessage", "Home")</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        @*<footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>*@
+
+    @*<header>
+            <div class="headercustom"</p></div>
+        </header>*@
+
+
+
+
+
+
+
+    <div class="menu">
+        @(Html.Kendo().Menu()
+            .Name("menu1")
+            .Items(menu =>
+            {
+                menu.Add().Text("همه پیام ها").Action("GetAllMessage", "Home").HtmlAttributes(new { @class = "item-menu" });
+                menu.Add().Text("خانه").Action("Index", "Home").HtmlAttributes(new { @class = "item-menu" });
+                menu.Add().Text("جستجوی پیام").Action("GetMessage", "Home").HtmlAttributes(new { @class = "item-menu" });
+                menu.Add().Text("افزودن پیام").Action("CreateMessage", "Home").HtmlAttributes(new { @class = "item-menu" });
+            })
+        )
     </div>
 
- 
+    @RenderBody()
+
+
+
     @RenderSection("scripts", required: false)
 </body>
+<style>
+    body {
+        height: 100vh;
+        overflow-x: hidden;
+    }
+
+    ul#menu1 {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+        border: solid 1px #ccc;
+    }
+
+    .menu {
+        float: left;
+        display: block;
+        width: 190px;
+        min-height: 138px;
+        margin: 10px;
+        line-height: 1.5em;
+        position: absolute;
+        right: 0;
+        width: 100px;
+        height: 120px;
+        padding-top: 60px;
+    }
+
+    .k-widget.k-menu-horizontal > .k-item {
+        border-style: unset;
+        border-width: unset;
+    }
+
+    .k-menu .k-item > .k-link {
+        display: block;
+        padding: 0em !important;
+    }
+
+    .item-menu {
+        padding: 40px
+    }
+
+    li.k-item.item-menu.k-state-highlight.k-state-default {
+        padding: 50px 39px;
+    }
+
+    .headercustom {
+        padding: 60px;
+        text-align: center;
+        background: #1abc9c;
+        color: white;
+        font-size: 30px;
+    }
+
+
+</style>
 </html>
